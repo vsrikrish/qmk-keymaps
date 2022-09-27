@@ -4,7 +4,7 @@ USERNAME  = 'vsrikrish'
 KEYBOARDS = {
   'planck'        => ['rev6_drop'],
 }
-QMK_DIR   = "#{__dir__}/qmk"
+QMK_DIR   = "#{__dir__}/qmk_firmware"
 USER_DIR  = "#{QMK_DIR}/users/#{USERNAME}"
 
 def keymap_dir(keyboard)
