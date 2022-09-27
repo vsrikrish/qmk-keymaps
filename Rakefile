@@ -1,12 +1,8 @@
 require 'fileutils'
 
-USERNAME  = 'my'
+USERNAME  = 'vsrikrish'
 KEYBOARDS = {
-  'bm16s'         => [nil],
-  'kbdfans/kbd4x' => [nil],
-  'georgi'        => [nil],
-  'planck'        => ['rev3', 'rev4', 'rev5', 'light'],
-  'preonic'       => ['rev3'],
+  'planck'        => ['rev6_drop'],
 }
 QMK_DIR   = "#{__dir__}/qmk"
 USER_DIR  = "#{QMK_DIR}/users/#{USERNAME}"
