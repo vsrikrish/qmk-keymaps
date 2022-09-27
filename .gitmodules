@@ -1,4 +1,4 @@
 [submodule "qmk"]
-	path = qmk
+	path = qmk_firmware
 	url = https://github.com/qmk/qmk_firmware
 	ignore = untracked
