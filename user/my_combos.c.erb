@@ -15,7 +15,7 @@
  */
 
 #include "my.h"
-#include "my_leader.h"
+
 
 enum combo_events {<% combos.select {|c| c.complex? }.each do |combo| %>
   <%= combo.constant_name %>,<% end %>

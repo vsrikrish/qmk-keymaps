@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
    *    Tap for ( -- │  ⇧  │  Z  │  X  │  C  │  V  │  B  │  N  │  M  │  ,  │  .  │  /  │  ⇧  │ -- Tap for )
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *    Tap for [ -- │ GUI │Hyper│  ⌥  │  ⌘  │Lower│ Nav │Space│Raise│ 	←  │  ↑  │  ↓  |  →  │
+   *    Tap for [ -- │Mute │Hyper│  ⌥  │  ⌘  │Lower│ Nav │Space│Raise│ 	←  │  ↑  │  ↓  |  →  │
    *                 └─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┘
    *                         /    Tap for Backspace __/                           
    */
@@ -35,9 +35,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB,  _________________QWERTY_L1_________________, _________________QWERTY_R1_________________, KC_QUOT,
     CTL_ESC, _________________QWERTY_L2_________________, _________________QWERTY_R2_________________, CTL_ENT,
     KC_LSPO, _________________QWERTY_L3_________________, _________________QWERTY_R3_________________, KC_RSPC,
-    GUI_L,   HYPER_L, KC_LALT, KC_LGUI, LOWER,  NAV_BSP, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT
+    KC_KB_MUTE, HYPER_L, KC_LALT, KC_LGUI, LOWER,  NAV_BSP, KC_SPC,  RAISE,   KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT
   ),
-
   /* Base layer (Colemak)
    *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
    *                 │     │  Q  │  W  │  F  │  P  │  G  │  J  │  L  │  U  │  Y  │  ;  │     │
@@ -112,26 +111,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______, _______, _______, XXXXXXX, _______, XXXXXXX, XXXXXXX, _______, _______, _______, _______
   ),
 
-  /* GUI (window management/mouse/media controls) layer
-   *
-   *         Mouse keys -----/```````````````````\               /```````````````````\----- Window manager
-   *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-   *                 │     │Prev │ NW  │  N  |  NE │     │     │Ms B2│Ms Up│Ms B1│Ms WD│     │
-   *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │     │Full │  W  |Centr│  E  │     │     │Ms L │Ms Dn│Ms R │Ms WU│     │
-   *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *                 │     │Next │ SW  │  S  │ SE  │     │     │Undo │ Cut │Copy │Paste│     │
-   *                 ┢━━━━━╅─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────╆━━━━━┪
-   *                 ┃     ┃Prev │Play │Next │Brig-│Sleep│Wake │Brig+│Mute │Vol- │Vol+ ┃     ┃
-   *                 ┗━━━━━┹─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┴─────┺━━━━━┛
-   *                         \___ Media ___/   \___ Screen/sleep __/   \___ Volume __/
-   */
-  [GUI_LAYER] = LAYOUT_planck_grid_wrapper(
-    _______, __________________GUI_L1___________________, __________________GUI_R1___________________, _______,
-    _______, __________________GUI_L2___________________, __________________GUI_R2___________________, _______,
-    _______, __________________GUI_L3___________________, __________________GUI_R3___________________, _______,
-    _______, __________MEDIA__________, KC_BRID, KC_SLEP, KC_WAKE, KC_BRIU, __________VOLUME_________, _______
-  ),
+  
 
   /* Stenography layer
    *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
@@ -153,21 +133,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   /* Keyboard settings layer
    *                 ┌─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┬─────┐
-   *     Firmware -- │     │Reset│Make │     │     │     │     │     │     │     │Vers │     │
+   *                 │Full │ScnSt│     │     │     │     │     │     │     │     │     │Reset│
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *          RGB -- │Qwert│U Lnx│U OSX│Mode-│Mode+│Hue -│Hue +│Sat -│Sat +│     │Play1│Rec 1│ -- Record/play macro 1
+   *                 │     │     │           │     │     │     │     │     │     │     │     │ 
    *                 ├─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-   *        Audio -- │Colem│Voic-│Voic+│Mus +│Mus -│MIDI+│MIDI-│Aud +│Aud -│     │Play2│Rec 2│ -- Record/play macro 2
+   *        Audio -- │Play │Prev │Next │     │     │     │     │     |Undo | Cut │Copy |Paste│ -- Macros
    *                 ├─────┼─────┼─────┼─────╆━━━━━╅─────┼─────╆━━━━━╅─────┼─────┼─────┼─────┤
-   *                 │Steno│     │Swap │Norm ┃     ┃  Toggle   ┃     ┃Toggl│Brig-│Brig+│Stop │ -- Stop recording macro
+   *                 │Mute │Vol- │Vol+ │     ┃     ┃     |     ┃     ┃     │Brig-│Brig+│Lock │ -- Screen
    *                 └─────┴─────┴─────┴─────┺━━━━━┹─────┴─────┺━━━━━┹─────┴─────┴─────┴─────┘
    *                Swap GUI/Alt _/________/             \_____________\_ Backlight _/
    */
   [ADJUST_LAYER] = LAYOUT_planck_grid_wrapper(
-    XXXXXXX, RESET,   SEND_MAKE, XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, SEND_VERSION,    XXXXXXX,
-    QWERTY,  UC_M_LN, UC_M_OS,   RGB_RMOD, RGB_MOD, RGB_HUD, RGB_HUI, RGB_SAD, RGB_SAI, XXXXXXX, DYN_MACRO_PLAY1, DYN_REC_START1,
-    COLEMAK, MUV_DE,  MUV_IN,    MU_ON,    MU_OFF,  MI_ON,   MI_OFF,  AU_ON,   AU_OFF,  XXXXXXX, DYN_MACRO_PLAY2, DYN_REC_START2,
-    STENO,   XXXXXXX, AG_SWAP,   AG_NORM,  LOWER,   LIT_TOG, LIT_TOG, RAISE,   LIT_TOG, LIT_DEC, LIT_INC,         DYN_REC_STOP
+    WM_FULL, WM_SCREEN,   XXXXXXX,   XXXXXXX,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,         RESET,
+    XXXXXXX,  XXXXXXX, XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+    KC_MPLY, KC_MPRV,  KC_MNXT,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_UNDO, KC_CUT,  KC_COPY, KC_PASTE,
+    KC_KB_MUTE,  KC_KB_VOLUME_UP, KC_KB_VOLUME_DOWN,  XXXXXXX,  _______,  _______, _______, _______, XXXXXXX,KC_BRIGHTNESS_UP, KC_BRIGHTNESS_DOWN,  WM_LOCK
   )
 };
 
@@ -233,7 +213,7 @@ void rgb_matrix_indicators_user(void) {
       break;
   }
 
-  // Disable middle LED between keys in grid layout.
+  // Disable middle LED between keßys in grid layout.
   rgb_matrix_set_color(42, 0x00, 0x00, 0x00);
 }
 #endif

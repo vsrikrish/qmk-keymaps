@@ -15,7 +15,6 @@
  */
 
 #include "my.h"
-#include "my_leader.h"
 
 #ifdef AUDIO_ENABLE
 float plover_song[][2]    = SONG(PLOVER_SOUND);
@@ -34,7 +33,7 @@ void matrix_init_user(void) {
 #endif
 }
 
-uint32_t layer_state_set_user(uint32_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, LOWER_LAYER, RAISE_LAYER, ADJUST_LAYER);
 }
 
@@ -45,11 +44,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t *record) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-#ifdef COMBO_ENABLE
-  if (!process_leader(keycode, record)) {
-    return false;
-  }
-#endif
+
 
   if (!process_record_keymap(keycode, record)) {
     return false;
@@ -70,13 +65,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 #ifdef COMBO_ENABLE
         combo_enable();
 #endif
-      }
-      return false;
-    case STCH_EX:
-      if (record->event.pressed) {
-        layer_off(CAMEL_LAYER);
-        layer_off(KEBAB_LAYER);
-        layer_off(SNAKE_LAYER);
       }
       return false;
     case STENO:

@@ -35,7 +35,7 @@ enum user_layers {
   LOWER_LAYER,
   RAISE_LAYER,
   NAV_LAYER,
-  GUI_LAYER,
+  PAD_LAYER,
   STENO_LAYER,
   ADJUST_LAYER
 };
@@ -75,18 +75,9 @@ enum user_keycodes {
 #define KC_MDSH S(LALT(KC_MINS))
 
 // Window manager keys
-#define WM_FULL LALT(LGUI(KC_F))
-#define WM_NEXT LCTL(LALT(LGUI(KC_RGHT)))
-#define WM_PREV LCTL(LALT(LGUI(KC_LEFT)))
-#define WM_NW   LCTL(LGUI(KC_LEFT))
-#define WM_N    LALT(LGUI(KC_UP))
-#define WM_NE   LCTL(LGUI(KC_RGHT))
-#define WM_E    LALT(LGUI(KC_RGHT))
-#define WM_SE   S(LCTL(LGUI(KC_RGHT)))
-#define WM_S    LALT(LGUI(KC_DOWN))
-#define WM_SW   S(LCTL(LGUI(KC_LEFT)))
-#define WM_W    LALT(LGUI(KC_LEFT))
-#define WM_CNTR LALT(LGUI(KC_C))
+#define WM_FULL LCTL(LGUI(KC_F))
+#define WM_SCREEN LSHFT(LGUI(3))
+#define WM_LOCK LCTL(LGUI(KC_Q))
 
 // Unify backlight controls
 #if defined(RGB_MATRIX_ENABLE) || defined(RGBLIGHT_ENABLE)
