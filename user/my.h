@@ -32,9 +32,6 @@
 enum user_layers {
   QWERTY_LAYER,
   COLEMAK_LAYER,
-  CAMEL_LAYER,
-  KEBAB_LAYER,
-  SNAKE_LAYER,
   LOWER_LAYER,
   RAISE_LAYER,
   NAV_LAYER,
@@ -158,13 +155,13 @@ enum user_keycodes {
 #define __________________NAV_R2___________________ KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX
 #define __________________NAV_R3___________________ LALT(KC_LEFT), LALT(KC_DOWN), LALT(KC_UP), LALT(KC_RGHT), XXXXXXX
 
-#define __________________GUI_L1___________________ KC_BTN2, KC_MS_U, KC_BTN1, KC_WH_D, XXXXXXX
-#define __________________GUI_L2___________________ KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, XXXXXXX
-#define __________________GUI_L3___________________ KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE, XXXXXXX
+#define __________________GUI_R1___________________ KC_BTN2, KC_MS_U, KC_BTN1, KC_WH_D, XXXXXXX
+#define __________________GUI_R2___________________ KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, XXXXXXX
+#define __________________GUI_R3___________________ KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE, XXXXXXX
 
-#define __________________GUI_R1___________________ XXXXXXX, WM_PREV, WM_NW,   WM_N,    WM_NE
-#define __________________GUI_R2___________________ XXXXXXX, WM_FULL, WM_W,    WM_CNTR, WM_E
-#define __________________GUI_R3___________________ XXXXXXX, WM_NEXT, WM_SW,   WM_S,    WM_SE
+#define __________________GUI_L1___________________ XXXXXXX, WM_PREV, WM_NW,   WM_N,    WM_NE
+#define __________________GUI_L2___________________ XXXXXXX, WM_FULL, WM_W,    WM_CNTR, WM_E
+#define __________________GUI_L3___________________ XXXXXXX, WM_NEXT, WM_SW,   WM_S,    WM_SE
 
 #ifdef STENO_ENABLE
 #define _________________STENO_L1__________________ STN_N2,  STN_N3,  STN_N4,  STN_N5,  STN_N6
