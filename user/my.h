@@ -70,6 +70,10 @@ enum user_keycodes {
 
 #define GUI_GRV LGUI(KC_GRV)
 
+#define KC_COPY LGUI(KC_C)
+#define KC_CUT LGUI(KC_X)
+#define KC_PASTE LGUI(KC_V)
+
 // Dashes (macOS)
 #define KC_NDSH LALT(KC_MINS)
 #define KC_MDSH S(LALT(KC_MINS))
