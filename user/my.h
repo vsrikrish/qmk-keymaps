@@ -54,11 +54,11 @@ enum user_keycodes {
 #define LOWER MO(LOWER_LAYER)
 #define RAISE MO(RAISE_LAYER)
 
-#define GUI_L LT(GUI_LAYER, KC_LBRC)
-#define GUI_R LT(GUI_LAYER, KC_RBRC)
+#define GUI_L LGUI_T(KC_LBRC)
+#define GUI_R RGUI_T(KC_RBRC)
 
-#define HYPER_L ALL_T(KC_RBRC)
-#define HYPER_R ALL_T(KC_LBRC)
+#define HYPER_L ALL_T(KC_LBRC)
+#define HYPER_R ALL_T(KC_RBRC)
 
 #define CTL_ESC CTL_T(KC_ESC)
 #define CTL_ENT CTL_T(KC_ENT)
@@ -76,7 +76,7 @@ enum user_keycodes {
 
 // Window manager keys
 #define WM_FULL LCTL(LGUI(KC_F))
-#define WM_SCREEN LSHFT(LGUI(3))
+#define WM_SCREEN LSFT(LGUI(3))
 #define WM_LOCK LCTL(LGUI(KC_Q))
 
 // Unify backlight controls
@@ -138,13 +138,13 @@ enum user_keycodes {
 #define _________________RAISE_R2__________________ KC_CIRC, KC_AMPR, KC_ASTR, KC_LCBR, KC_RCBR
 #define _________________RAISE_R3__________________ KC_NDSH, KC_MDSH, KC_COMM, KC_DOT,  KC_SLSH
 
-#define __________________NAV_L1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __________________NAV_L2___________________ XXXXXXX, KC_HOME, KC_PGUP, KC_PGDN, KC_END
-#define __________________NAV_L3___________________ XXXXXXX, LGUI(KC_LEFT), LGUI(KC_UP), LGUI(KC_DOWN), LGUI(KC_RGHT)
+#define __________________NAV_L1___________________ XXXXXXX, XXXXXXX, LGUI(KC_UP), KC_HOME, KC_PGUP
+#define __________________NAV_L2___________________ XXXXXXX, LGUI(KC_LEFT), LGUI(KC_DOWN), LGUI(KC_RIGHT), XXXXXXX
+#define __________________NAV_L3___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
-#define __________________NAV_R1___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
-#define __________________NAV_R2___________________ KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX
-#define __________________NAV_R3___________________ LALT(KC_LEFT), LALT(KC_DOWN), LALT(KC_UP), LALT(KC_RGHT), XXXXXXX
+#define __________________NAV_R1___________________ KC_PGDN, KC_END, KC_UP, XXXXXXX, XXXXXXX
+#define __________________NAV_R2___________________ XXXXXXX, KC_LEFT, KC_DOWN,   KC_RIGHT, XXXXXXX
+#define __________________NAV_R3___________________ XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
 
 #define __________________GUI_R1___________________ KC_BTN2, KC_MS_U, KC_BTN1, KC_WH_D, XXXXXXX
 #define __________________GUI_R2___________________ KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U, XXXXXXX
